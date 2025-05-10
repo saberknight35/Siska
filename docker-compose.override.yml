@@ -1,0 +1,9 @@
+
+services:
+  siska-admin:
+    environment:
+      - 'ConnectionStrings:DefaultConnection=Host=siska-database;Database=siskaadmin;Username=postgres;Password=postgres'
+    ports:
+      - "8000:7777"
+    volumes:
+      - E://Data/siska:/app/upload_dir

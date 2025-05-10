@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Siska.Admin.Cache\Siska.Admin.Cache.csproj" />
+    <ProjectReference Include="..\Siska.Admin.Database\Siska.Admin.Database.csproj" />
+    <ProjectReference Include="..\Siska.Admin.Model\Siska.Admin.Model.csproj" />
+    <ProjectReference Include="..\Siska.Admin.Storage\Siska.Admin.Storage.csproj" />
+  </ItemGroup>
+
+</Project>

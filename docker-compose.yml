@@ -1,0 +1,34 @@
+services:
+  siska-database:
+    image: postgres:12.2
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      -  E://Data/Postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - siska-network
+    healthcheck:
+      test: [ "CMD", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  siska-admin:
+    image: ${DOCKER_REGISTRY-}siska
+    build:
+      context: .
+      dockerfile: Siska.Admin.Server/Dockerfile
+    networks:
+      - siska-network
+    depends_on:
+      siska-database:
+        condition: service_healthy
+
+
+networks:
+  siska-network:
+    driver: bridge
+

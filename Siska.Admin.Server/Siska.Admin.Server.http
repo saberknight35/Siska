@@ -1,0 +1,12 @@
+@Siska.Admin.Server_HostAddress = http://localhost:5156
+
+POST {{Siska.Admin.Server_HostAddress}}/api/signin
+Accept: */*
+Content-Type: application/json
+
+{
+  "login": "admin",
+  "password": "admin@siska.com"
+}
+
+###
