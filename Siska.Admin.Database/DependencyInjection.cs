@@ -14,7 +14,7 @@ namespace Siska.Admin.Database
         {
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            _ = services.AddDbContext<SiskaDbContext>(options => options.UseNpgsql(connectionString));
+            _ = services.AddDbContext<SiskaDbContext>(options => options.UseSqlServer(connectionString));
 
             _ = services.AddTransient<IAPIEndpointRepository, APIEndpointRepository>();
 
